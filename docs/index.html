@@ -55,7 +55,7 @@ margin-left: 3px;
 	font-size: 1.2em;
 	
 }
-@media (max-width: 1070px) {
+@media (max-width: 1246px) {
 .nav-desktop {
 display: none;
 }
@@ -68,7 +68,7 @@ display: none;
 	background-position: center;
 }
 }
-@media  (min-width: 1070px) {
+@media  (min-width: 1246px) {
 .mobile-wrapper {
 display: none;
 
@@ -186,7 +186,7 @@ padding-bottom: 10px;
 	left:5px;
 	padding: 5px;
 }
-.container {
+#items_container1 {
 	height:40%;
 	display: flex;
 
@@ -197,13 +197,13 @@ justify-content: flex-start;
 .item {
 	margin: 15px;
 	width:206px;
-	height:350px;
+	height:410px;
 	text-align:center;
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 20px;
 	border-color: #9fe9f7;
-
+background-color: white;
 	transition:all 0.3s ease;
 
 }
@@ -211,7 +211,7 @@ justify-content: flex-start;
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
         transform: scale(1.2);
-      background-color:#FFF7F7;;
+    
 
 }
 .item button{
@@ -227,6 +227,7 @@ font-size: 1.2em;
 
  
 }
+
 .item a{
 	color:none;
 }
@@ -237,7 +238,7 @@ font-size: 1.2em;
 	height:124px;
 	text-align: center;
 		background-image: url('images/banner.png');
-	background-repeat: no-repeat;
+	text-transform:uppercase;
 	background-position: center;
 	line-height:124px;
 letter-spacing: 3px;
@@ -247,12 +248,9 @@ letter-spacing: 3px;
 }
 }
 .overlay {
-
 	  position: fixed;
- 
   width: 100%;
   height: 100%;
-
   top: 0;
   left: 0;
   right: 0;
@@ -347,7 +345,15 @@ font-family: 'Roboto', sans-serif;
 
 	font-size: 1.57143em;
 }
-
+#small_categories {
+	display: none;
+	position:fixed;
+	left:75px;
+	top:0px;
+	width:245px;
+	height:500px;
+	background-color:white;
+}
 </style>
 </head>
 <body>
@@ -356,7 +362,7 @@ font-family: 'Roboto', sans-serif;
 	<div class="upline"> 
 
 <div class="number"><div id="text" ><strong>+38 (096) 913 20-89</strong></div></div>
-	<div id="shipping-message" >FREE SHIPPING ON UKRAINE ORDERS OVER $75!</div>
+	<div id="shipping-message" >FREE SHIPPING ON UKRAINE ORDERS OVER ₴7500!</div>
 </div>
 
 
@@ -364,24 +370,18 @@ font-family: 'Roboto', sans-serif;
 <div class="bigwrapper">
 <div class="nav-desktop">
 	<div class="nav-wrapper">
-		<ul class="menu" >
+		<ul class="menu" style="display:inline">
 			<li id="logo-desktop" style="display: inline-block;text-align: center;vertical-align:middle;width:376px;" ><a href="/"><img src="images/logo.png" alt="Round00s.com logo" height="57" width="376"></a> </li>
-			<li style="vertical-align:middle;display: inline-block; width:10%;text-align: center;"> <a href="#home">SHOP</a></li>
+			<li class="category" style="vertical-align:middle;display: inline-block; width:10%;    font-size: 16px;text-align: center;text-transform:uppercase"> <a href="#home">SHOP</a></li>
 
- <li style="vertical-align:middle;display: inline-block;width:10%;text-align: center;"> <a href="#brandnew">CONSOLES</a></li>
 
- <li  style="vertical-align:middle;display: inline-block;width:10%;text-align: center;"> <a href="#bestsellers">VIDEO GAMES</a>
-  
- <li style="vertical-align:middle;display: inline-block;width:10%;text-align: center;"> <a href="https://www.instagram.com/poroshenkopetro" target="_blank">POSTERS</a></li>
-
-   <li style="vertical-align:middle;display: inline-block;width:10%;text-align: center;"><a href="#about">OTHER STUFF</a></li>
-   <li class="cart_button" style="vertical-align:middle;display: inline-block;width:10%;text-align: right"><a ><img src="images/shopcart.png" height="45" width="45"></a><div class="text" style="display:inline-block;"></div></li>
 		</ul>
+		<div class="cart_button" style="vertical-align:middle;display: inline-block;width:5%;text-align: right"><a ><img src="images/shopcart.png" height="45" width="45"></a><div class="text" style="display:inline-block;"></div></div>
 	</div>
 </div>
 <div class="nav-mobile>">
 	<div class="mobile-wrapper">
-     <a href="FrameIt.html" style="float:left; "><img src="images/menu.png" alt="The menu" height="75" width="75"> </a>
+     <div id="mobile_categories"  style="float:left; "><img src="images/menu.png" alt="The menu" height="75" width="75"> </div>
    
      <a class="cart_button" style="float:right;margin-right: 3%;" ><img src="images/shopcart.png" alt="The basket" height="50" width="50"><div class="text" style="display:inline-block;"></div></a> 
 	</div>
@@ -390,36 +390,23 @@ font-family: 'Roboto', sans-serif;
 </div>
 
 </div>
-
-<div class="content" style="width:100%">
- <div class="banner"> <h1>BEST SELLERS</h1> </div>
- <div class="container">
-<div class="item"><a href="#item"><img style="border-radius: 30px;"src="images/segadreamcast2.png" height="200" width="200" title="Our goods" alt="Buy it">
+<div id=small_categories> <ul id="small_holder"></ul></div>
+<div class="content" style="width:100%;">
+ <div class="banner"> <h1>ALL STOCK</h1> </div>
+ <div id="items_container1" >
+<div class="item"><a href="#item"><img class="item_image" style="border-radius: 30px; object-fit: contain;"src="images/segadreamcast2.png" height="200" width="200" title="Our goods" alt="Buy it">
 	 </a>
-	<p><a style="text-decoration: none;letter-spacing: 1px;
+	<p><a class="item_name" style="text-decoration: none;letter-spacing: 1px;
     font-size: 1em;color:#00000;" href="https://weirdorconfusing.com/" target="_blank">SEGA DREAMCAST PLAYER PAK</a></p>
-	<p> $99.99</p>
+	<p class="item_price"> $99.99</p>
 <form>
   <button type='button'>BUY IT</button>
 </form></div>
-<div class="item"><a href="#item"><img src="images/Nintendo_64.png" height="200" width="200" title="Our goods" alt="Buy it"> </a>
-<p><a style="text-decoration: none;letter-spacing: 1px;
-    font-size: 1em;color:#00000;" href="https://weirdorconfusing.com/" target="_blank">GAMECUBE PLATINUM SUPER SMASH KART PAK</a></p>
-<p><s>$269.99</s> $244.99</p>
-<form>
-  <button type='button'>
-   BUY IT</button>
-</form></div>
+
 
 
 </div>
- <div class="banner"> <h1>RARE ITEMS</h1></div>
- <div class="container">
-</div>
-  <div class="banner"> <h1>BRAND NEW</h1> </div>
-  <div class="container">
 
-</div>
 </div>
 <footer class="myFooter" id="coolInfo">
    <ul class="footermenu"   >
@@ -449,7 +436,7 @@ font-family: 'Roboto', sans-serif;
 
 </div>
 
-<script type="text/javascript" src="js/shop-cart-work.js"> </script>
+
 <script src="./js/main.js"></script>
 </body>
 </html>
